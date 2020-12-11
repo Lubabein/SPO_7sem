@@ -34,7 +34,9 @@ class Triad:
 
         for v in self.value_table:
             v[1] = v[1].get_value()
-
+        if len(self.value_table[0])>1:
+            #self.value_table = self.value_table[-1]
+            pass
         if fl:
             return self.out, self.value_table
         else:

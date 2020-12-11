@@ -3,8 +3,11 @@ from pars import Parser
 from transfer_to_pn import PN
 from stack_machine import stack_machine
 from triad_processing import Triad
+from thread_manager import Thread_manager
+from my_thread import Thread
 
-f = open('test5.txt')
+
+f = open('test2.txt')
 inp = f.read()
 f.close()
 
@@ -28,6 +31,13 @@ if pars:
         triad = Triad(fun[i][-1], fun)
         fun[i][-1] = triad.triad_op(False)
 
-    print('\nstack machine:')
     sm = stack_machine(t, val, fun)
-    sm.stack_machine_run()
+    thread_flag = 1
+    if thread_flag == 1:
+        main_th = Thread('main', stack_machine(t, val, fun))
+        th_manager = Thread_manager([main_th])
+        th_manager.run()
+        pass
+    else:
+        print('\nstack machine\nvalue table:')
+        sm.stack_machine_run()

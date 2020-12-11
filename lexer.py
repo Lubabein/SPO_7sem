@@ -31,6 +31,7 @@ class Lexer:
     def lex(self, input):
         regex = re.compile('function\s[a-zA-Z]+\d*|==|!=|\d+|[a-zA-Z]+\d*|[-+*/=;<>{}()]')
         t = regex.findall(input)
+
         for tok in t:
             for reg, typ in self.rules:
                 if re.match(re.compile(reg), tok):

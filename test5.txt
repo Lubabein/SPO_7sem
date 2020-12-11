@@ -1,5 +1,10 @@
+function sum(a,b){
+    d = a+b;
+    return d;
+}
+
 function fun(a,b){
-    d = 9+1;
+    d = sum(9,1);
     f = a*b + d + k;
     return f;
 }
