@@ -31,7 +31,6 @@ class Thread_manager:
                     else:
                         pass
                     del self.thread_queue[i]
-
                     if i+1 >= len(self.thread_queue):
                         break
                 elif stat == 'wait':
@@ -39,7 +38,5 @@ class Thread_manager:
                     sm = stack_machine(d[1], d[2], d[3])
                     self.thread_queue.append(Thread(d[0].get_value(), sm))
                     print("thread {} add".format(d[0].get_value()))
-                elif stat == 'ready':
-                    pass
         print('\nvalue table:')
         print(d)

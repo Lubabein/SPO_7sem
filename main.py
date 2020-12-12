@@ -32,8 +32,10 @@ if pars:
         fun[i][-1] = triad.triad_op(False)
 
     sm = stack_machine(t, val, fun)
-    thread_flag = 1
-    if thread_flag == 1:
+    thread_flag = 'n'
+    print('\nDo you want to run the program in multi-thread mode? [y/n]')
+    thread_flag = input()
+    if thread_flag == 'y':
         main_th = Thread('main', stack_machine(t, val, fun))
         th_manager = Thread_manager([main_th])
         th_manager.run()
