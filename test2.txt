@@ -7,7 +7,7 @@ function fun(a,b){
     f = a*b + d;
     return f;
 }
-b = 0;
+
 b = fun(1,2) + calculation(1,2);
 
 

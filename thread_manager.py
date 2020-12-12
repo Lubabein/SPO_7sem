@@ -21,7 +21,7 @@ class Thread_manager:
                     break
                 if (len(self.thread_queue) > 2 and i == 0) or (fl and i == 0 and len(self.thread_queue) > 1):
                     continue
-                print("thread {} start".format(self.thread_queue[i].name))
+                print("thread {} run".format(self.thread_queue[i].name))
                 stat, d = self.thread_queue[i].data.stack_machine_run(True, len(self.thread_queue))
                 if stat == 'exit' and not (len(self.thread_queue) == 1 and i == 0):
                     print("thread {} ended".format(self.thread_queue[i].name))
